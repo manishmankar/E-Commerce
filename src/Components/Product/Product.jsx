@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { ProductConsumer } from "../../Context/Context";
 
 export default class Product extends Component {
   render() {
@@ -8,32 +9,38 @@ export default class Product extends Component {
     return (
       <div className="col-9 mx-auto col-md-6 col-lg-3 my-3">
         <div className="card">
-          <div className="img-container p-5">
-            <Link to="/details">
-              <img
-                style={{
-                  width: "100%",
-                }}
-                src={img}
-                alt=""
-                onClick={() => console.log("you click me")}
-              />
-            </Link>
+          <ProductConsumer>
+            {(value) => {
+              return (
+                <div className="img-container p-5">
+                  <Link to="/details">
+                    <img
+                      style={{
+                        width: "100%",
+                      }}
+                      src={img}
+                      alt=""
+                      onClick={() => value.handleDetail(id)}
+                    />
+                  </Link>
 
-            <button
-              className="cart-btn"
-              disabled={inCart ? true : false}
-              onClick={() => console.log("add to cart")}
-            >
-              {inCart ? (
-                <p className="text-capitaize mb-0" disabled>
-                  In card
-                </p>
-              ) : (
-                <i className="fas fa-cart-plus">add</i>
-              )}
-            </button>
-          </div>
+                  <button
+                    className="cart-btn"
+                    disabled={inCart ? true : false}
+                    onClick={() => value.addToCart(id)}
+                  >
+                    {inCart ? (
+                      <p className="text-capitaize mb-0" disabled>
+                        In card
+                      </p>
+                    ) : (
+                      <i className="fas fa-cart-plus">add</i>
+                    )}
+                  </button>
+                </div>
+              );
+            }}
+          </ProductConsumer>
           <div className="card-footer d-flex justify-content-between">
             <p className="align-self-center mb-0">{title}</p>
             <div> ${price} </div>
@@ -44,12 +51,12 @@ export default class Product extends Component {
   }
 }
 
-product.propTypes = {
-  product: PropTypes.shape({
-    id: PropTypes.number,
-    img: PropTypes.string,
-    title: PropTypes.string,
-    price: PropTypes.number,
-    inCart: PropTypes.bool,
-  }).isRequired,
-};
+// product.propTypes = {
+//   product: PropTypes.shape({
+//     id: PropTypes.number,
+//     img: PropTypes.string,
+//     title: PropTypes.string,
+//     price: PropTypes.number,
+//     inCart: PropTypes.bool,
+//   }).isRequired,
+// };

@@ -108,7 +108,8 @@ export const storeProducts = [
 export const detailProduct = {
   id: 1,
   title: "Google Pixel - Black",
-  img: "img/product-1.png",
+  img:
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRv-PntAr_qyjQTs6yW7ApMyXoANk7LqgeK1g&usqp=CAU",
   price: 10,
   company: "google",
   info:
