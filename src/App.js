@@ -8,6 +8,7 @@ import Details from "./Components/Details/Details";
 import Default from "./Components/Default/Default";
 import Card from "./Components/Card/Card";
 import Store from "./Components/Store/Store";
+import Model from "./Components/Model/Model";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route exact path="/" component={ProductLIst} />
         <Route component={Default} />
       </Switch>
+      <Model />
     </React.Fragment>
   );
 }

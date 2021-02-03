@@ -16,6 +16,7 @@ export default class Details extends Component {
             title,
             inCart,
           } = value.detailsPoduct;
+          console.log(inCart);
           return (
             <div className="container py-5">
               <div className="row">
@@ -40,12 +41,19 @@ export default class Details extends Component {
                       <Link to="/">
                         <button>Product</button>
                       </Link>
+
                       <button
-                        onClick={() => {
-                          value.addToCart(id);
-                        }}
+                        className="cart-btn"
+                        disabled={inCart ? true : false}
+                        onClick={() => value.addToCart(id)}
                       >
-                        {inCart ? "inCart" : "add to cart"}
+                        {inCart ? (
+                          <p className="text-capitaize mb-0" disabled>
+                            In card
+                          </p>
+                        ) : (
+                          "add to cart"
+                        )}
                       </button>
                     </div>
                   </div>

@@ -17,6 +17,7 @@ export default class Product extends Component {
                     <img
                       style={{
                         width: "100%",
+                        height: "200px",
                       }}
                       src={img}
                       alt=""
@@ -27,7 +28,10 @@ export default class Product extends Component {
                   <button
                     className="cart-btn"
                     disabled={inCart ? true : false}
-                    onClick={() => value.addToCart(id)}
+                    onClick={() => {
+                      value.addToCart(id);
+                      value.openModal(id);
+                    }}
                   >
                     {inCart ? (
                       <p className="text-capitaize mb-0" disabled>
