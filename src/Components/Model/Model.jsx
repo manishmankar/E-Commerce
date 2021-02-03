@@ -48,7 +48,7 @@ export default class Model extends Component {
                             continue shoping
                           </button>
                         </Link>
-                        <Link to="/">
+                        <Link to="/card">
                           <button cart onClick={() => closeModal()}>
                             go to cart
                           </button>
