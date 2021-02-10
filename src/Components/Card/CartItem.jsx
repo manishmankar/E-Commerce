@@ -2,8 +2,9 @@ import React, { Component } from "react";
 
 export default class CartItem extends Component {
   render() {
-    const { id, title, img, total, count, price } = this.props.value;
-    const { increment, decrement, removeItem } = this.props.value;
+    const { id, title, img, total, count, price } = this.props.item;
+    const { increment, decrement, removeIteam } = this.props.value;
+    console.log(this.props.value.cart);
     return (
       <div>
         <div className="row my-1 text-capitalize text-center">
@@ -20,7 +21,7 @@ export default class CartItem extends Component {
           </div>
           <div className="col-10 mx-auto col-lg-2 ">
             <strong>
-              <span className="d-lg-none">price :</span> ${price}
+              <span className="d-lg-none">price :</span> $ {price}
             </strong>
           </div>
           <div className="col-10 mx-auto col-lg-2 my-2 my-lg-0 ">
@@ -47,8 +48,8 @@ export default class CartItem extends Component {
             </div>
           </div>
           <div className="col-10 mx-auto col-lg-2 ">
-            <div className=" cart-icon" onClick={() => removeItem(id)}>
-              <i className="fas fa-trash" />
+            <div className=" cart-icon" onClick={() => removeIteam(id)}>
+              <div>Delete</div>
             </div>
           </div>
 
