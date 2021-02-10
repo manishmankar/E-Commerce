@@ -42,14 +42,21 @@ export default class Model extends Component {
                           alt=""
                         />
                         <h5>{title}</h5>
-                        <h5 className="text-muted">price: ${price}</h5>
+                        <h5 className="text-muted ">price: ${price}</h5>
                         <Link to="/">
-                          <button onClick={() => closeModal()}>
+                          <button
+                            className="btn btn-success mr-5"
+                            onClick={() => closeModal()}
+                          >
                             continue shoping
                           </button>
                         </Link>
                         <Link to="/card">
-                          <button cart onClick={() => closeModal()}>
+                          <button
+                            className="btn btn-warning"
+                            cart
+                            onClick={() => closeModal()}
+                          >
                             go to cart
                           </button>
                         </Link>

@@ -19,15 +19,12 @@ https://www.iconfinder.com/Makoto_msk */}
         <ul className="navbar-nav align-items-center">
           <li className="nav-item ml-5">
             <Link to="/" className="nav-link">
-              PRODUCT
+              <h2> PRODUCT</h2>
             </Link>
           </li>
         </ul>
         <Link to="/card" className="ml-auto">
-          <span className="mr-2">
-            <i className="fas fa-cart-plus " />
-          </span>
-          my cart
+          <button className="btn btn-primary px-5"> My Cart</button>
         </Link>
       </nav>
     );
