@@ -4,9 +4,9 @@ export default class CartItem extends Component {
   render() {
     const { id, title, img, total, count, price } = this.props.item;
     const { increment, decrement, removeIteam } = this.props.value;
-    console.log(this.props.value.cart);
+
     return (
-      <div>
+      <div key={id}>
         <div className="row my-1 text-capitalize text-center">
           <div className="col-10 mx-auto col-lg-2">
             <img
@@ -48,9 +48,9 @@ export default class CartItem extends Component {
             </div>
           </div>
           <div className="col-10 mx-auto col-lg-2 ">
-            <div className=" cart-icon" onClick={() => removeIteam(id)}>
-              <div>Delete</div>
-            </div>
+            <button className="  btn-danger" onClick={() => removeIteam(id)}>
+              Delete
+            </button>
           </div>
 
           <div className="col-10 mx-auto col-lg-2 ">

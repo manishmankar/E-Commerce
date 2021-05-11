@@ -6,7 +6,7 @@ import "./Product.css";
 export default class Product extends Component {
   render() {
     const { id, title, img, price, inCart } = this.props.pro;
-    console.log(inCart);
+
     return (
       <div className="col-9 mx-auto col-md-6 col-lg-3 my-3">
         <div className="card">

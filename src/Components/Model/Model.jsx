@@ -10,7 +10,7 @@ export default class Model extends Component {
           {(value) => {
             const { modalOpen, closeModal } = value;
             const { img, title, price } = value.modalProduct;
-            console.log(modalOpen);
+
             if (!modalOpen) {
               return null;
             } else {
